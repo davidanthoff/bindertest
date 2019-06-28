@@ -8,12 +8,19 @@ Pkg.add("PackageCompiler")
 insert!(LOAD_PATH, 2, "@compilestuff")
 
 @info LOAD_PATH
+println("TADA 1")
+println(LOAD_PATH)
 
 Pkg.activate(".")
 
 @info LOAD_PATH
+println("TADA 2")
+println(LOAD_PATH)
 
 using PackageCompiler
+
+@info "HERE DONE"
+println("TADA 3")
 
 path_a, path_b = compile_incremental(:VegaDatasets)
 
