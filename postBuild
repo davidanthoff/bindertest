@@ -29,7 +29,7 @@ ENV["JULIA_LOAD_PATH"] = "@:@pkgcompilerenv:@v#.#:@stdlib"
 # This doesn't actually seem to work, though...
 ENV["JULIA_PROJECT"] = @__DIR__
 
-new_sysimg_path, old_sysimg_path = compile_incremental(:VegaDatasets, :VegaLite, :Query)
+new_sysimg_path, old_sysimg_path = compile_incremental(:VegaDatasets)
 
 # Phase 3: Modify the Julia kernel spec so that it loads our
 # custom sysimg.
