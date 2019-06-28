@@ -28,11 +28,11 @@ ENV["JULIA_LOAD_PATH"] = "@:@pkgcompilerenv:@v#.#:@stdlib"
 # the client processes to run with the user env active.
 ENV["JULIA_PROJECT"] = @__DIR__
 
-path_a, path_b = compile_incremental(:VegaDatasets)
+path_a, path_b = compile_incremental(:VegaDatasets, install=true)
 
 @info path_a
 @info path_b
 
 using IJulia
 
-installkernel("Julia", "--project=$(@__DIR__) --J $(path_b)"
+installkernel("Julia", "--project=$(@__DIR__) --J $(path_b)")
