@@ -3,7 +3,7 @@
 using Pkg
 
 Pkg.activate("compilestuff", shared=true)
-Pkg.add("PackageCompiler#sd-notomls")
+Pkg.add("PackageCompiler")
 
 insert!(LOAD_PATH, 2, "@compilestuff")
 
