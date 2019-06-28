@@ -13,7 +13,7 @@ Pkg.activate(".")
 
 using PackageCompiler
 
-path_a, path_b = compile_incremental("VegaDatasets")
+path_a, path_b = compile_incremental(:VegaDatasets)
 
 @info path_a
 @info path_b
