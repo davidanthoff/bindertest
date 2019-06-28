@@ -26,10 +26,12 @@ ENV["JULIA_LOAD_PATH"] = "@:@pkgcompilerenv:@v#.#:@stdlib"
 
 # PackageCompiler also ignores the active env. We use this hack to force
 # the client processes to run with the user env active.
+# This doesn't actually seem to work, though...
 ENV["JULIA_PROJECT"] = @__DIR__
 
 path_a, path_b = compile_incremental(:VegaDatasets)
 
+@info "THESE ARE THE PATHS"
 @info path_a
 @info path_b
 
