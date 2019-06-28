@@ -1,0 +1,23 @@
+#!/usr/bin/env julia
+
+using Pkg
+
+Pkg.activate("compilestuff", shared=true)
+Pkg.add("PackageCompiler#sd-notomls")
+
+insert!(LOAD_PATH, 2, "@compilestuff")
+
+@info LOAD_PATH
+
+Pkg.activate(".")
+
+using PackageCompiler
+
+path_a, path_b = compile_incremental("VegaDatasets")
+
+@info path_a
+@info path_b
+
+using IJulia
+
+installkernel("Julia", "--project=$(@__DIR__) --J $(path_b)"
