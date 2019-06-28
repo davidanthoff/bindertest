@@ -11,6 +11,8 @@ insert!(LOAD_PATH, 2, "@compilestuff")
 
 Pkg.activate(".")
 
+@info LOAD_PATH
+
 using PackageCompiler
 
 path_a, path_b = compile_incremental(:VegaDatasets)
