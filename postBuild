@@ -22,6 +22,8 @@ using PackageCompiler
 @info "HERE DONE"
 println("TADA 3")
 
+ENV["JULIA_LOAD_PATH"] = "@:@compilestuff:@v#.#:@stdlib"
+
 path_a, path_b = compile_incremental(:VegaDatasets)
 
 @info path_a
