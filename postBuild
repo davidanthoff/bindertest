@@ -35,4 +35,4 @@ path_a, path_b = compile_incremental(:VegaDatasets, install=true)
 
 using IJulia
 
-installkernel("Julia", "--project=$(@__DIR__) --J $(path_b)")
+installkernel("Julia", "--project=$(@__DIR__)", "-J", path_a)
